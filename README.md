@@ -1,3 +1,3 @@
-# Astro Starter
+# Astro x Bootstrap 5 Starter
 
-Quick startup for Astro w/ Bun, React and Tailwind.
+Quick startup for Astro w/ Bun and Bootstrap 5.
