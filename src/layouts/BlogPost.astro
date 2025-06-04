@@ -1,13 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import type { CollectionEntry } from 'astro:content';
-import { BASE_URL } from '../consts';
-import FormattedDate from '../components/FormattedDate.astro';
-
-type Props = CollectionEntry<'blog'>['data'];
 import { Image } from 'astro:assets';
 import placeholder from '../assets/placeholders/image.jpg';
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <BaseLayout
@@ -19,22 +14,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			<div class='col-lg-8 text-center'>
 				<div class='hero-image ratio ratio-16x9 mb-2'>
 					<Image
-						src={heroImage || placeholder}
+						src={placeholder}
 						alt={title}
 						loading={'eager'}
 					/>
 				</div>
-				<div class='mb-1 text-gray'>
-					<FormattedDate date={pubDate} />
-					{
-						updatedDate && (
-							<div class='fst-italic'>
-								Last updated on{' '}
-								<FormattedDate date={updatedDate} />
-							</div>
-						)
-					}
-				</div>
+				<div class='mb-1 text-gray'></div>
 				<h1>{title}</h1>
 				<hr />
 			</div>
